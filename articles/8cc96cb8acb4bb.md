@@ -3,7 +3,7 @@ title: "Google CloudのObservability : Personalized Service Health"
 emoji: "🤸"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ['gc24', 'Google Cloud', 'Observability', 'Personalized Service Health']
-published: false
+published: true
 ---
 
 # はじめに
