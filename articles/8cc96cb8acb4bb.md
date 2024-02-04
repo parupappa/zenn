@@ -10,7 +10,7 @@ published: false
 
 先日、これまで[プレビュー版](https://cloud.google.com/blog/ja/products/management-tools/introducing-personalized-service-health)だった、Google Cloudの稼働監視サービスの**Personalized Service Health**がGAになりました！
 
-[Personalized Service Health is now generally available | Google Cloud Blog](https://cloud.google.com/blog/products/devops-sre/personalized-service-health-is-now-generally-available/?hl=en)
+https://cloud.google.com/blog/products/devops-sre/personalized-service-health-is-now-generally-available/?hl=en
 
 基本的な使用方法や設定はこちらのブログにて詳しく解説されていますので、ここでは運用面の機能を中心にPersonalized Service Healthを見ていきます。
 
@@ -26,8 +26,10 @@ Google Cloudの各種サービスステータスは、Google Cloud Service Healt
 
 インシデントが発生すると、以下のようにダッシュボード上に警告**！**の表示がつきます。
 
+![](https://storage.googleapis.com/zenn-user-upload/220403027cd4-20240204.png)
 
-![スクリーンショット 2024-02-04 11.25.44.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b9061398-9d73-43e2-a89a-963f6a3bc2e8/39972fe0-af2a-49e5-ba4b-02c0b37243f4/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2024-02-04_11.25.44.png)
+![](https://storage.googleapis.com/zenn-user-upload/0d1bb3ad2289-20240204.png)
+
 
 また Personalized Service Healthでは **Service Health event** と呼ばれるイベント情報がCloud LoggingにLoggingされます
 
@@ -37,10 +39,11 @@ Google Cloudの各種サービスステータスは、Google Cloud Service Healt
 - Alert（Cloud Monitoring, Cloud Logging）
 - API
     
-    ![スクリーンショット 2024-02-04 11.27.06.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/b9061398-9d73-43e2-a89a-963f6a3bc2e8/bddc9657-3c29-4ab2-ace7-342ec4ae2b2a/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2024-02-04_11.27.06.png)
-    
+![](https://storage.googleapis.com/zenn-user-upload/73868bed8902-20240204.png)
 
 [Personalized Service Health shows emerging incidents | Google Cloud Blog](https://cloud.google.com/blog/products/networking/personalized-service-health-shows-emerging-incidents?hl=en)
+
+
 
 まさに、**Google Cloudの可観測性（Observability）** を提供してくれていると言って良いのではないでしょうか
 
