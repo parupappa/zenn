@@ -1,8 +1,8 @@
 ---
-title: "Terraform / GKE での External Secret Operator Template"
+title: "Terraform / GKE での ExternalSecretOperator テンプレート"
 emoji: "🔑"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ['GoogleCloud', 'GKE', 'Terraform', 'Kubernetes', 'ExternalSecretOperator']
+topics: ['GoogleCloud', 'GKE', 'Terraform', 'Helm', 'ExternalSecretOperator']
 published: false
 ---
 # はじめに
@@ -10,11 +10,13 @@ published: false
 GKEのSecretの管理にExternal Secret Operatorを利用することがありました。
 
 
-周辺知識も補足しながら、備忘も兼ねて、今後の使い回しのできるようにTerraform / GKEでのExternal Secret Operatorのテンプレートを作成しました。
+備忘も兼ねて、周辺知識も補足しながら、今後の使い回しのできるようにTerraform / GKEでのExternal Secret Operatorのテンプレートを作成しました。
 
 【前提】
 - Cluster : GKE Autopilot 1.27
   - GKEのWorkload Identityは有効化されている
+- マニフェスト管理
+  - helm : helmfile
 - IaC : Terraform
 
 今回は、Service Accountキーの使用ではなく、workload identityを利用しています。
@@ -33,7 +35,9 @@ variable "roles" {
 
 Service Account に対して必要な権限を定義します。
 
-GKEではアプリケーション レイヤでのSecretの暗号化が有効になっている場合は、Cloud KMSへのアクセスが必要なため、`roles/cloudkms.cryptoKeyEncrypterDecrypter`を追加します。
+GKEでのアプリケーションレイヤでのSecretの暗号化が有効になっている場合は、Cloud KMSへのアクセスが必要なため、`roles/cloudkms.cryptoKeyEncrypterDecrypter`を追加します。
+
+また、アクセストークンの生成に必要なロール `roles/iam.serviceAccountTokenCreator` も付与します。
 
 https://cloud.google.com/kubernetes-engine/docs/how-to/encrypting-secrets?hl=ja
 
@@ -67,12 +71,12 @@ resource "google_service_account_iam_member" "external_secrets_workload_identity
   member             = "serviceAccount:${var.project_id}.svc.id.goog[default/external-secrets-serviceaccount]"
 }
 ```
-memberの値には、kubernetesのserviceaccountの存在するnamespsaceと、kubernetesのserviceaccountの名前を指定します。
-
+`member`の値には、kubernetes serviceaccount（KSA）の存在するNamespsaceと、KSAの名前を指定します。
+ここでは、default Namespaceに`external-secrets-serviceaccount`という名前のKSAを作成しています。
 
 
 # Manifest
-環境差分がありそうな部分に関しては、`values-${env}.yaml`に定義していますので、参照する形で作成してください。
+環境差分がありそうな部分に関しては、`values.yaml`, `values-${env}.yaml`に定義していますので、参照する形で作成してください。
 
 ```yaml
 apiVersion: v1
@@ -115,12 +119,7 @@ spec:
 
 https://mixi-developers.mixi.co.jp/compare-eso-with-secret-csi-846ed8b1c9b
 
-また、下記のようにnamespaceを指定すると、
-```
-serviceAccountRef:
-    name: external-secrets-serviceaccount
-    namespace: default
-```
+また、`serviceAccountRef`に対してnamespaceを指定することはできないので、気をつけてください
 
 
 ```yaml
@@ -147,10 +146,8 @@ spec:
     secretKey: bar
 ```
 
-https://cloud.google.com/kubernetes-engine/docs/concepts/workload-identity?hl=ja#configure-workloads
-
 # 参考
-- [Google Secret Manager と External Secrets Operator を連携して GKE で secret を自動生成 #external-secrets #GCP #GKE #SecretManager](https://www.creationline.com/tech-blog/66988)
+- [Google Secret Manager と External Secrets Operator を連携して GKE で secret を自動生成](https://www.creationline.com/tech-blog/66988)
 
 - [ExternalSecretsOperator(ESO)をEKSとGKEに導入して各SecretsManagerからシークレットを取得する](https://qiita.com/sokasanan/items/0011ed478c0a060539b8)
 
