@@ -88,10 +88,8 @@ spec:
         key: test-secret
       secretKey: test-secret-key
 ```
-
 :::
 
-<br>
 
 続いて上記マニフェストを使用して、ESO の helm chart の展開と、マニフェストの apply を行います。
 
