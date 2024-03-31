@@ -1,9 +1,9 @@
 ---
-title: "Terraform / GKE での ExternalSecretOperator テンプレート"
+title: "Terraform / GKE で実現する ExternalSecretOperator テンプレート"
 emoji: "🔑"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ['GoogleCloud', 'GKE', 'Terraform', 'Helm', 'ExternalSecretOperator']
-published: false
+published: true
 ---
 # はじめに
 
@@ -107,7 +107,7 @@ spec:
       # ref: https://external-secrets.io/v0.5.7/spec/#external-secrets.io/v1beta1.GCPSMAuth
       auth:
         workloadIdentity:
-          clusterLocation: {{ .Values.secretStore.clusterLocation }}
+          clusterLocation: {{ .Values.clusterLocation }}
           clusterName: {{ .Values.clusterName }}
           serviceAccountRef:
             name: external-secrets-serviceaccount
@@ -144,6 +144,15 @@ spec:
   - remoteRef:
       key: foo
     secretKey: bar
+```
+
+```yaml:values.yaml
+projectID: ${PROJECT_ID}
+clusterName: ${CLUSTER_NAME}
+clusterLocation: ${CLUSTER_LOCATION}
+serviceAccount:
+  annotations:
+    iam.gke.io/gcp-service-account: ${PROJECT_ID}.svc.id.goog[NAMESPACE/KSA_NAME]
 ```
 
 # 参考
