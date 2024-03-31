@@ -3,7 +3,7 @@ title: "新しくなった Workload Identity Federation for GKE を試してみ�
 emoji: "👀"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ['GKE', 'WorkloadIdentity','IAM', 'ServiceAccount', 'GoogleCloud']
-published: false
+published: true
 ---
 # はじめに
 GKE の Workload Identity 連携（Workload Identity Federation for GKE）がアップデートされたということで、早速試してみました。
