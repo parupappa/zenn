@@ -163,7 +163,7 @@ Events:              <none>
 
 GKE メタデータサーバーから
 
-<details><summary> マニフェスト例 </summary></summary>
+:::details マニフェスト例 
 
 ```yaml:test-pod.yaml
 apiVersion: v1
@@ -180,7 +180,7 @@ spec:
   nodeSelector:
     iam.gke.io/gke-metadata-server-enabled: "true"
 ```
-</details>
+:::
 
 ```bash
 # pod に入って確認
