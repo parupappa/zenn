@@ -92,7 +92,7 @@ metadata:
     {{to nindent 4 .}}
   {{- end }}
 ```
-kubernetesのServiceAccountを作成します。
+kubernetes の ServiceAccount を作成します。
 
 ```yaml:secretstore.yaml
 apiVersion: external-secrets.io/v1beta1
@@ -114,13 +114,13 @@ spec:
             name: external-secrets-serviceaccount
 ```
 
-今回はnamespaceごとの制御にしたいため、`kind: ClusterSecretStore` ではなく、`kind: SecretStore`を利用しています。
+今回は Namespace ごとの制御にしたいため、`kind: ClusterSecretStore` ではなく、`kind: SecretStore` を利用しています。
 
 違いはこちらに詳しく書いてあります。
 
 https://mixi-developers.mixi.co.jp/compare-eso-with-secret-csi-846ed8b1c9b
 
-また、`serviceAccountRef`に対してnamespaceを指定することはできないので、気をつけてください
+また、`serviceAccountRef` に対して Namespace を指定することはできないので、気をつけてください
 
 
 ```yaml:externalsecret.yaml
