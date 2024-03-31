@@ -16,24 +16,25 @@ https://cloud.google.com/kubernetes-engine/docs/concepts/workload-identity#confi
 
 下記の表にもあるように、GSAが必要なくなり、KSAを直接 bind できるようになり、両者の ServiceAccount の連携が不要となりました！
 
-![alt text](../images/new-workload-identity-federation-for-gke/GJ4BfE-agAAvnNR.jpeg)
+![alt text](/images/new-workload-identity-federation-for-gke/GJ4BfE-agAAvnNR.jpeg)
 
 【引用元】
 - https://twitter.com/_techcet_/status/1773865010651173293
 - https://twitter.com/_techcet_/status/1773865012320440390
 
 # External Secrets Operator を使用して、Secret を取得する時で検証してみる
-従来のやり方は以下の記事を参考にして下さい。（External Secrets Operator の導入や使い方についてはここでは割愛します）
+従来のやり方は以下の記事を参考にして下さい。
+（External Secrets Operator の導入や使い方についてはここでは割愛します）
 
 https://zenn.dev/yokoo_an209/articles/external-secret-operator
 
 
-## Step1 : 準備
+## Step1 : Secret Manager に secret を作成
 Secret Manager に、`test-secret`という key で`hogehoge` という value を設定します
 
-![alt text](<../images/new-workload-identity-federation-for-gke/screenshot 2024-03-31 20.49.55.png>)
+![alt text](</images/new-workload-identity-federation-for-gke/screenshot.png>)
 
-## Step2
+## Step2 : ESO 展開
 GKE の Workload Identity連携を有効にする（Autopilot モードだとデフォルトで有効になっています。）
 https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity?hl=ja#enable
 
@@ -87,6 +88,7 @@ spec:
         key: test-secret
       secretKey: test-secret-key
 ```
+
 </details>
 
 <br>
@@ -110,7 +112,7 @@ externalsecret.external-secrets.io/test-application-externalsecret created
 ```
 
 
-## Step3
+## Step3 : KSA bind と Secret の取得
 KSA を Google Cloud の IAM Policy に binding します。
 `[PROJECT_NUMBER]`, `[PROJECT_ID]`には各々に合わせた形で修正してください
 
