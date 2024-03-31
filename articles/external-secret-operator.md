@@ -7,7 +7,7 @@ published: true
 ---
 # はじめに
 
-GKEのSecretの管理にExternal Secret Operatorを利用することがありました。
+GKEのSecretの管理に External Secret Operator を利用することがありました。
 
 
 備忘も兼ねて、周辺知識も補足しながら、今後の使い回しのできるようにTerraform / GKEでのExternal Secret Operatorのテンプレートを作成しました。
@@ -19,7 +19,7 @@ GKEのSecretの管理にExternal Secret Operatorを利用することがあり�
   - helm : helmfile
 - IaC : Terraform
 
-今回は、Service Accountキーの使用ではなく、workload identityを利用しています。
+今回は、Service Account キーの使用ではなく、Workload Identityを利用しています。
 基本的な流れはこちらの公式docに詳しく書いてあるので、参考にしてください。
 
 https://cloud.google.com/kubernetes-engine/docs/tutorials/workload-identity-secrets?hl=ja
@@ -37,12 +37,11 @@ Service Account に対して必要な権限を定義します。
 
 GKEでのアプリケーションレイヤでのSecretの暗号化が有効になっている場合は、Cloud KMSへのアクセスが必要なため、`roles/cloudkms.cryptoKeyEncrypterDecrypter`を追加します。
 
-また、アクセストークンの生成に必要なロール `roles/iam.serviceAccountTokenCreator` も付与します。
-
 https://cloud.google.com/kubernetes-engine/docs/how-to/encrypting-secrets?hl=ja
 
 
-`google_project_iam_binding`に対するRoleのバインドは1つしかできないため、for_eachを利用して複数のRoleをバインドします。
+また、アクセストークンの生成に必要なロール `roles/iam.serviceAccountTokenCreator` も付与します。
+
 
 
 ```hcl
@@ -71,14 +70,16 @@ resource "google_service_account_iam_member" "external_secrets_workload_identity
   member             = "serviceAccount:${var.project_id}.svc.id.goog[default/external-secrets-serviceaccount]"
 }
 ```
+`google_project_iam_binding`に対するRoleのバインドは1つしかできないため、for_eachを利用して複数のRoleをバインドします。
+
 `member`の値には、kubernetes serviceaccount（KSA）の存在するNamespsaceと、KSAの名前を指定します。
 ここでは、default Namespaceに`external-secrets-serviceaccount`という名前のKSAを作成しています。
 
 
 # Manifest
-環境差分がありそうな部分に関しては、`values.yaml`, `values-${env}.yaml`に定義していますので、参照する形で作成してください。
+環境差分がありそうな部分に関しては、`values.yaml`に定義していますので、参照する形で作成してください。
 
-```yaml
+```yaml:serviceaccount.yaml
 apiVersion: v1
 kind: ServiceAccount
 metadata:
@@ -93,7 +94,7 @@ metadata:
 ```
 kubernetesのServiceAccountを作成します。
 
-```yaml
+```yaml:secretstore.yaml
 apiVersion: external-secrets.io/v1beta1
 kind: SecretStore
 metadata:
@@ -122,7 +123,7 @@ https://mixi-developers.mixi.co.jp/compare-eso-with-secret-csi-846ed8b1c9b
 また、`serviceAccountRef`に対してnamespaceを指定することはできないので、気をつけてください
 
 
-```yaml
+```yaml:externalsecret.yaml
 apiVersion: external-secrets.io/v1beta1
 kind: ExternalSecret
 metadata:
