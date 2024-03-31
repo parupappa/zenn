@@ -1,6 +1,6 @@
 ---
 title: "新しくなった Workload Identity Federation for GKE を試してみる"
-emoji: "👀"
+emoji: "👌"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ['GKE', 'WorkloadIdentity','IAM', 'ServiceAccount', 'GoogleCloud']
 published: true
@@ -41,7 +41,7 @@ https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity?hl=ja#e
 
 ESO 関連リソースを展開する下記マニフェストを使用します。
 
-<details><summary> マニフェスト例 </summary></summary>
+:::details マニフェスト例 
 
 ```yaml:workload-identify-for-gke-with-secret.yaml
 apiVersion: v1
@@ -89,7 +89,7 @@ spec:
       secretKey: test-secret-key
 ```
 
-</details>
+:::
 
 <br>
 
