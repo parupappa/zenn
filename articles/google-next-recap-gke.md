@@ -18,27 +18,8 @@ Google Cloud Next Tokyo’24 の セッションを（勝手に）Recap した�
 
 https://cloudonair.withgoogle.com/events/next-tokyo-24
 
-気になる箇所だけ見たい方は、以下の目次から飛んでください！
+気になる箇所だけ見たい方は、目次から飛んでください！
 
-- [これはなに？](#これはなに)
-- [セッション](#セッション)
-- [内容](#内容)
-- [GKE](#gke)
-  - [Workload Identity Federation for GKE](#workload-identity-federation-for-gke)
-  - [Pod Bursting](#pod-bursting)
-  - [Stateful HA Operator](#stateful-ha-operator)
-  - [Secret Manager add-on with Google Kubernetes Engine](#secret-manager-add-on-with-google-kubernetes-engine)
-  - [GCS FUSE Read Cache Support](#gcs-fuse-read-cache-support)
-  - [Container Image Preloading](#container-image-preloading)
-  - [Cluster-wide Network Policy](#cluster-wide-network-policy)
-  - [GKE Enterprise](#gke-enterprise)
-    - [GKE Threat Detection](#gke-threat-detection)
-    - [GKE Compliance](#gke-compliance)
-  - [Cloud Service Mesh（CSM）](#cloud-service-meshcsm)
-  - [GKE 延長サポート](#gke-延長サポート)
-  - [GKE まとめ](#gke-まとめ)
-  - [さいごに - GKE編](#さいごに---gke編)
-- [さいごに](#さいごに)
 
 
 # セッション
