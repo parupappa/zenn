@@ -276,7 +276,7 @@ https://cloud.google.com/blog/ja/products/containers-kubernetes/announcing-gke-e
 
 https://zenn.dev/yokoo_an209/scraps/1796702689a4d5
 
-- Kubernetes全体に関することであれば、弊社のk8sマスターこと [@toVersus](https://x.com/toversus26) のtimesとZenn の Scrap をぜひご覧ください！！！
+- Kubernetes全体に関することであれば、弊社のk8sの神こと [@toVersus](https://x.com/toversus26) のZenn の Scrap をぜひご覧ください！！！
 
 https://zenn.dev/toversus/scraps/06c7c9181ff3c1
 
