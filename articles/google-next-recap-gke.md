@@ -10,9 +10,7 @@ published: false
 
 先日、Google Cloud Next Tokyo’24が開催されました。
 
-Google Cloud Next Tokyo’24 の セッションを（勝手に）Recap したものになります
-
-[Google Cloud Next Tokyo ’24](https://cloudonair.withgoogle.com/events/next-tokyo-24)
+[Google Cloud Next Tokyo ’24](https://cloudonair.withgoogle.com/events/next-tokyo-24) の セッションを（勝手に）Recap したものになります
 
 基調講演のアーカイブも公開されているので、見逃した方はぜひご覧ください
 
@@ -21,12 +19,11 @@ https://cloudonair.withgoogle.com/events/next-tokyo-24
 気になる箇所だけ見たい方は、目次から飛んでください！
 
 
-
 # セッション
 
 **進化するコンテナ環境: Google Kubernetes Engine と Cloud Run の最新アップデートと使い所を徹底解説**
 
-- https://cloudonair.withgoogle.com/events/next-tokyo-24?talk=d1-app-03
+https://cloudonair.withgoogle.com/events/next-tokyo-24?talk=d1-app-03
 
 # 内容
 
@@ -180,26 +177,28 @@ https://cloud.google.com/kubernetes-engine/docs/how-to/configure-cilium-network-
 
 - そもそも、NetworkPolicyとは、Podに対してPod間の通信や外部のエンドポイントへの通信を制御するためのリソースです
 - 通常の、Namespace スコープであるNetwork Policyとは異なり、Cluster 全体に対する制御が可能となりました
-- マニフェスト
-    
-    ```yaml
-    apiVersion: "cilium.io/v2"
-    kind: CiliumClusterwideNetworkPolicy
-    metadata:
-      name: "l4-rule-ingress"
-    spec:
-      endpointSelector:
-        matchLabels:
-          role: backend
-      ingress:
-        - fromEndpoints:
-            - matchLabels:
-                role: frontend
-          toPorts:
-            - ports:
-                - port: "80"
-                  protocol: TCP
-    ```
+
+:::details マニフェスト
+```yaml
+apiVersion: "cilium.io/v2"
+kind: CiliumClusterwideNetworkPolicy
+metadata:
+    name: "l4-rule-ingress"
+spec:
+    endpointSelector:
+    matchLabels:
+        role: backend
+    ingress:
+    - fromEndpoints:
+        - matchLabels:
+            role: frontend
+        toPorts:
+        - ports:
+            - port: "80"
+                protocol: TCP
+```
+:::
+
 
 ## GKE Enterprise
 
