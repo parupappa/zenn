@@ -41,7 +41,30 @@ https://cloud.google.com/run/docs/configuring/vpc-direct-vpc?hl=ja
 
 ![alt text](/images/google-next-recap-cloud-run/direct-vpc-egress.png)
 
-詳しくは[こちら💡](https://qiita.com/AoTo0330/items/3e47dfbbcfe8b38591e1#volume-mounts)
+- すでに使っている方も多いと思いますが、Cloud Run から VPC に直接アクセスできるようになりました。これにより、VPC のリソースに直接アクセスできるようになりました
+- これまでの Cloud Run は、VPC にアクセスするためには、Serverless VPC Access Connector を利用する必要がありました
+  - Serverless VPC Access Connector は、Cloud Run と VPC の間に中継するためのもので、Serverless とはいいつつ、インスタンスのサイジングが必要だったり、Cloud Run と VPC 内の Cloud SQL のネットワーク遅延の問題があったりと、いくつかの課題がありました
+
+
+- せっかくなのでもう少し詳しく、違いを見てみましょう
+
+    | 機能 | Direct VPC Egress | Serverless VPC Access Connector |
+    | --- | --- | --- |
+    | レイテンシ | 低い | 高い |
+    | スループット | 高い | 低い |
+    | IP 割り振り | ほとんどの場合、より多くの IP アドレスを使用する | IP アドレスの使用が少なくなる |
+    | 費用 | VM の追加料金はなし | VM の追加料金が発生 |
+    | スケーリング速度 | [Cloud Run サービスでのインスタンスの自動スケーリング](https://cloud.google.com/run/docs/about-instance-autoscaling?hl=ja)は、新しい VPC ネットワーク インターフェースが作成されるときのトラフィックの急増で遅くなる | ネットワーク レイテンシは、VPC ネットワーク トラフィックが急増している間に、より多くのコネクタ インスタンスを作成することで発生 |
+    | Google Cloud コンソール | サポート対象 | サポート対象 |
+    | Google Cloud CLI | サポート対象 | サポート対象 |
+    | リリース ステージ | GA（Cloud Run ジョブは除く） | GA |
+
+
+- 参考: [ダイレクト VPC 下り（外向き）と VPC コネクタの比較  |  Cloud Run Documentation  |  Google Cloud](https://cloud.google.com/run/docs/configuring/connecting-vpc?hl=ja)
+- 参考: [VPC ネットワークによるダイレクト VPC 下り（外向き）  |  Cloud Run Documentation  |  Google Cloud](https://cloud.google.com/run/docs/configuring/vpc-direct-vpc?hl=ja)
+
+
+さらに詳しくは[こちら💡](https://qiita.com/AoTo0330/items/3e47dfbbcfe8b38591e1#volume-mounts)
 
 ## Volume Mount
 **🖊️公式doc**
@@ -62,6 +85,9 @@ https://firebase.google.com/docs/hosting/cloud-run?hl=ja
 
 
 ## Automatic Security Update
+**🖊️公式doc**
+https://cloud.google.com/container-optimized-os/docs/concepts/auto-update?hl=ja
+
 ![alt text](/images/google-next-recap-cloud-run/auto-security-update.png)
 
 
@@ -70,6 +96,9 @@ https://firebase.google.com/docs/hosting/cloud-run?hl=ja
 
 
 ## Multi-Region Load Balancer
+**🖊️公式doc**
+https://cloud.google.com/run/docs/multiple-regions?hl=ja
+
 ![alt text](/images/google-next-recap-cloud-run/multi-region-lb.png)
 
 
@@ -78,6 +107,9 @@ https://firebase.google.com/docs/hosting/cloud-run?hl=ja
 
 
 ## Application Canvas
+**🖊️公式doc**
+https://cloud.google.com/blog/ja/products/containers-kubernetes/google-clouds-container-platform-for-the-next-decade-of-ai
+
 ![alt text](/images/google-next-recap-cloud-run/application-canvas.png)
 
 
@@ -87,3 +119,4 @@ https://firebase.google.com/docs/hosting/cloud-run?hl=ja
 
 # Cloud Run まとめ
 ![alt text](/images/google-next-recap-cloud-run/cloud-run-matome.png)
+
