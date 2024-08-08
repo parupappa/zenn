@@ -30,12 +30,12 @@ https://cloudonair.withgoogle.com/events/next-tokyo-24
 
 # 内容
 
-![alt text](</images/google-next-recap-gke/Google Cloud Next Tokyo 24 Recap.png>)
+![alt text](/images/google-next-recap-gke/recap.png)
 
 
 # GKE
 
-![alt text](</images/google-next-recap-gke/Google Cloud Next Tokyo 24 Recap (1).png>)
+![alt text](/images/google-next-recap-gke/gke.png)
 
 まずは、お馴染みGKEについての説明です
 
@@ -49,13 +49,11 @@ https://speakerdeck.com/parupappa2929/xun-su-nixie-eru-gke-autopilotniyoruyuniba
 
 ## Workload Identity Federation for GKE
 
-<aside>
-<img src="https://www.notion.so/icons/bell-notification_gray.svg" alt="https://www.notion.so/icons/bell-notification_gray.svg" width="40px" /> **公式doc**
+**🖊️公式doc**
+
 https://cloud.google.com/kubernetes-engine/docs/concepts/workload-identity?hl=ja#configure-workloads
 
-</aside>
-
-![alt text](</images/google-next-recap-gke/Google Cloud Next Tokyo 24 Recap.jpg>)
+![alt text](/images/google-next-recap-gke/workload-identity-gke.jpg)
 
 これまで、GKE のWorkload Identity 連携は Google Cloud の Service Account（以降：SA）とKubernetesのSAをそれぞれ作成し、bindingする形式でしたが、Google Cloud のSAを作らずに Kubernetes のSAを直接メンバーとして権限を紐づけられるようになりました
 
@@ -72,13 +70,9 @@ Cynthia Thomas-sanからの発表コメント
 
 ## Pod Bursting
 
-<aside>
-<img src="https://www.notion.so/icons/bell-notification_gray.svg" alt="https://www.notion.so/icons/bell-notification_gray.svg" width="40px" /> **公式doc**
+**🖊️公式doc**
 
 https://cloud.google.com/kubernetes-engine/docs/how-to/pod-bursting-gke
-
-</aside>
-
 
 ![alt text](/images/google-next-recap-gke/pod-bursting-0.jpg)
 
@@ -123,12 +117,11 @@ https://cloud.google.com/kubernetes-engine/docs/how-to/pod-bursting-gke
 
 ## Stateful HA Operator
 
-<aside>
-<img src="https://www.notion.so/icons/bell-notification_gray.svg" alt="https://www.notion.so/icons/bell-notification_gray.svg" width="40px" /> **公式doc**
+**🖊️公式doc**
 
 https://cloud.google.com/kubernetes-engine/docs/how-to/stateful-ha?hl=ja
 
-</aside>
+
 
 ![alt text](/images/google-next-recap-gke/stateful-ha-operator.png)
 
@@ -145,7 +138,7 @@ https://cloud.google.com/kubernetes-engine/docs/how-to/stateful-ha?hl=ja
 
 https://cloud.google.com/secret-manager/docs/secret-manager-managed-csi-component
 
-</aside>
+
 
 ![alt text](/images/google-next-recap-gke/secrete-manager-addon.png)
 
@@ -162,7 +155,7 @@ https://cloud.google.com/secret-manager/docs/secret-manager-managed-csi-componen
 
 https://cloud.google.com/storage/docs/gcsfuse-cache?hl=ja
 
-</aside>
+
 
 ![alt text](/images/google-next-recap-gke/gcs-fuse-read-cache.png)
 
@@ -177,7 +170,7 @@ https://cloud.google.com/storage/docs/gcsfuse-cache?hl=ja
 
 https://cloud.google.com/kubernetes-engine/docs/how-to/data-container-image-preloading
 
-</aside>
+
 
 ![alt text](/images/google-next-recap-gke/container-image-preloading.jpg)
 
@@ -200,7 +193,7 @@ https://cloud.google.com/kubernetes-engine/docs/how-to/data-container-image-prel
 
 https://cloud.google.com/kubernetes-engine/docs/how-to/configure-cilium-network-policy?hl=ja
 
-</aside>
+
 
 ![alt text](/images/google-next-recap-gke/cluster-wiede-network.png)
 
@@ -235,7 +228,7 @@ https://cloud.google.com/kubernetes-engine/docs/how-to/configure-cilium-network-
 
 https://cloud.google.com/kubernetes-engine/enterprise/docs/concepts/overview?hl=ja
 
-</aside>
+
 
 ![alt text](/images/google-next-recap-gke/gke-enterprise-1.png)
 
@@ -255,7 +248,7 @@ https://cloud.google.com/kubernetes-engine/enterprise/docs/concepts/overview?hl=
 
 https://cloud.google.com/kubernetes-engine/docs/concepts/about-gke-threat-detection?hl=ja
 
-</aside>
+
 
 ![alt text](/images/google-next-recap-gke/gke-threat-detection.png)
 
@@ -269,7 +262,7 @@ https://cloud.google.com/kubernetes-engine/docs/concepts/about-gke-threat-detect
 
 https://cloud.google.com/blog/ja/products/containers-kubernetes/gke-compliance-reports-on-cluster-and-workload-posture
 
-</aside>
+
 
 ![alt text](/images/google-next-recap-gke/gke-compliance.png)
 
@@ -279,11 +272,10 @@ https://cloud.google.com/blog/ja/products/containers-kubernetes/gke-compliance-r
 
 ## Cloud Service Mesh（CSM）
 
-<aside>
-<img src="https://www.notion.so/icons/bell-notification_gray.svg" alt="https://www.notion.so/icons/bell-notification_gray.svg" width="40px" /> **公式doc**
+ **🖊️ 公式doc**
 https://cloud.google.com/blog/products/networking/introducing-cloud-service-mesh?hl=en
 
-</aside>
+
 
 ![alt text](/images/google-next-recap-gke/cloud-service-mesh.png)
 
@@ -303,7 +295,7 @@ https://zenn.dev/t_hayashi/articles/ad115c602203da
 
 https://cloud.google.com/blog/ja/products/containers-kubernetes/announcing-gke-extended-support
 
-</aside>
+
 
 ![IMG_6494.JPG](Google%20Cloud%20Next%20Tokyo%E2%80%9924%20%E5%8B%9D%E6%89%8B%E3%81%ABRecap%20~%20GKE%20Cloud%20Ru%2049f8445043b24fb08eae1f541ce4bf2d/IMG_6494.jpg)
 
