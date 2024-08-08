@@ -50,7 +50,6 @@ https://speakerdeck.com/parupappa2929/xun-su-nixie-eru-gke-autopilotniyoruyuniba
 ## Workload Identity Federation for GKE
 
 **🖊️公式doc**
-
 https://cloud.google.com/kubernetes-engine/docs/concepts/workload-identity?hl=ja#configure-workloads
 
 ![alt text](/images/google-next-recap-gke/workload-identity-gke.jpg)
@@ -71,7 +70,6 @@ Cynthia Thomas-sanからの発表コメント
 ## Pod Bursting
 
 **🖊️公式doc**
-
 https://cloud.google.com/kubernetes-engine/docs/how-to/pod-bursting-gke
 
 ![alt text](/images/google-next-recap-gke/pod-bursting-0.jpg)
@@ -79,7 +77,6 @@ https://cloud.google.com/kubernetes-engine/docs/how-to/pod-bursting-gke
 ![alt text](/images/google-next-recap-gke/pod-bursting-1.png)
 
 ![alt text](/images/google-next-recap-gke/pod-bursting-2.jpg)
-
 
 
 - **Pod bursting in GKE**
@@ -118,13 +115,10 @@ https://cloud.google.com/kubernetes-engine/docs/how-to/pod-bursting-gke
 ## Stateful HA Operator
 
 **🖊️公式doc**
-
 https://cloud.google.com/kubernetes-engine/docs/how-to/stateful-ha?hl=ja
 
 
-
 ![alt text](/images/google-next-recap-gke/stateful-ha-operator.png)
-
 
 
 - Stateful High Availability（HA）Operator を使用することで、GKE の組み込みの[リージョン Persistent Disk](https://cloud.google.com/compute/docs/disks/high-availability-regional-persistent-disk?hl=ja) との統合を使用して、[StatefulSet](https://cloud.google.com/kubernetes-engine/docs/concepts/statefulset?hl=ja) Pod のフェイルオーバーの速度を自動化および制御できるようになります。
@@ -133,11 +127,8 @@ https://cloud.google.com/kubernetes-engine/docs/how-to/stateful-ha?hl=ja
 
 ## Secret Manager add-on with Google Kubernetes Engine
 
-<aside>
-<img src="https://www.notion.so/icons/bell-notification_gray.svg" alt="https://www.notion.so/icons/bell-notification_gray.svg" width="40px" /> **公式doc**
-
+**🖊️公式doc**
 https://cloud.google.com/secret-manager/docs/secret-manager-managed-csi-component
-
 
 
 ![alt text](/images/google-next-recap-gke/secrete-manager-addon.png)
@@ -150,12 +141,8 @@ https://cloud.google.com/secret-manager/docs/secret-manager-managed-csi-componen
 
 ## GCS FUSE Read Cache Support
 
-<aside>
-<img src="https://www.notion.so/icons/bell-notification_gray.svg" alt="https://www.notion.so/icons/bell-notification_gray.svg" width="40px" /> **公式doc**
-
+**🖊️公式doc**
 https://cloud.google.com/storage/docs/gcsfuse-cache?hl=ja
-
-
 
 ![alt text](/images/google-next-recap-gke/gcs-fuse-read-cache.png)
 
@@ -165,11 +152,8 @@ https://cloud.google.com/storage/docs/gcsfuse-cache?hl=ja
 
 ## Container Image Preloading
 
-<aside>
-<img src="https://www.notion.so/icons/bell-notification_gray.svg" alt="https://www.notion.so/icons/bell-notification_gray.svg" width="40px" /> **公式doc**
-
+**🖊️公式doc**
 https://cloud.google.com/kubernetes-engine/docs/how-to/data-container-image-preloading
-
 
 
 ![alt text](/images/google-next-recap-gke/container-image-preloading.jpg)
@@ -188,12 +172,8 @@ https://cloud.google.com/kubernetes-engine/docs/how-to/data-container-image-prel
 
 ## Cluster-wide Network Policy
 
-<aside>
-<img src="https://www.notion.so/icons/bell-notification_gray.svg" alt="https://www.notion.so/icons/bell-notification_gray.svg" width="40px" /> **公式doc**
-
+**🖊️公式doc**
 https://cloud.google.com/kubernetes-engine/docs/how-to/configure-cilium-network-policy?hl=ja
-
-
 
 ![alt text](/images/google-next-recap-gke/cluster-wiede-network.png)
 
@@ -223,31 +203,24 @@ https://cloud.google.com/kubernetes-engine/docs/how-to/configure-cilium-network-
 
 ## GKE Enterprise
 
-<aside>
-<img src="https://www.notion.so/icons/bell-notification_gray.svg" alt="https://www.notion.so/icons/bell-notification_gray.svg" width="40px" /> **公式doc**
-
+**🖊️公式doc**
 https://cloud.google.com/kubernetes-engine/enterprise/docs/concepts/overview?hl=ja
-
 
 
 ![alt text](/images/google-next-recap-gke/gke-enterprise-1.png)
 
 ![alt text](/images/google-next-recap-gke/gke-enterprise-all.png)
 
-
 - GKE Enterpriseに関するアップデートも最近活発になっております！
 - そもそも、GKEには “モード” と “エディション” という棲み分けがあり、ややこしいが以下のようになっています
     - https://lp.cloudplatformonline.com/rs/808-GJW-314/images/GoogleCloud_mod0301_breakout-c5.pdf#page=21.00
 
-![alt text](/images/google-next-recap-gke/gke-enterprise-edtion.png)
+    ![alt text](/images/google-next-recap-gke/gke-enterprise-edtion.png)
 
 ### GKE Threat Detection
 
-<aside>
-<img src="https://www.notion.so/icons/bell-notification_gray.svg" alt="https://www.notion.so/icons/bell-notification_gray.svg" width="40px" /> **公式doc**
-
+**🖊️公式doc**
 https://cloud.google.com/kubernetes-engine/docs/concepts/about-gke-threat-detection?hl=ja
-
 
 
 ![alt text](/images/google-next-recap-gke/gke-threat-detection.png)
@@ -256,25 +229,18 @@ https://cloud.google.com/kubernetes-engine/docs/concepts/about-gke-threat-detect
 - GKE Enterprise だと追加料金なしで利用可能
 
 ### GKE Compliance
-
-<aside>
-<img src="https://www.notion.so/icons/bell-notification_gray.svg" alt="https://www.notion.so/icons/bell-notification_gray.svg" width="40px" /> **公式doc**
-
+**🖊️公式doc**
 https://cloud.google.com/blog/ja/products/containers-kubernetes/gke-compliance-reports-on-cluster-and-workload-posture
 
-
-
 ![alt text](/images/google-next-recap-gke/gke-compliance.png)
-
 
 - こちらも`Preview` 機能にはなりますが、 GKE Complianceは、Google Cloud の KSPMである GKE Security Postureに統合された機能として提供されます。
 - CISベンチマークをはじめとする、業界水準レベルのコンテナコンプライアンスに対応しているかどうかのアセスメントを効率的に行えるようになります。
 
 ## Cloud Service Mesh（CSM）
 
- **🖊️ 公式doc**
+**🖊️公式doc**
 https://cloud.google.com/blog/products/networking/introducing-cloud-service-mesh?hl=en
-
 
 
 ![alt text](/images/google-next-recap-gke/cloud-service-mesh.png)
@@ -289,15 +255,10 @@ https://cloud.google.com/blog/products/networking/introducing-cloud-service-mesh
 https://zenn.dev/t_hayashi/articles/ad115c602203da
 
 ## GKE 延長サポート
-
-<aside>
-<img src="https://www.notion.so/icons/bell-notification_gray.svg" alt="https://www.notion.so/icons/bell-notification_gray.svg" width="40px" /> **公式doc**
-
+**🖊️公式doc**
 https://cloud.google.com/blog/ja/products/containers-kubernetes/announcing-gke-extended-support
 
-
-
-![IMG_6494.JPG](Google%20Cloud%20Next%20Tokyo%E2%80%9924%20%E5%8B%9D%E6%89%8B%E3%81%ABRecap%20~%20GKE%20Cloud%20Ru%2049f8445043b24fb08eae1f541ce4bf2d/IMG_6494.jpg)
+![alt text](/images/google-next-recap-gke/gke-extended.jpg)
 
 - 新たなリリースチャンネルとして、**`Extended` リリースチャンネル** が登場
 - 標準サポート期間（14ヶ月） + 追加オプションとして10ヶ月のサポート期間を増やすことが可能になる
@@ -305,7 +266,6 @@ https://cloud.google.com/blog/ja/products/containers-kubernetes/announcing-gke-e
 ## GKE まとめ
 
 ![alt text](/images/google-next-recap-gke/gke-matome.png)
-
 
 - AI / ML ワークロード用途として GKE を利用することが多くなってきたこともあり、それに寄り添ったアップデートが増えている印象がありました
 - また、Autopilot の利用をより加速させるような寄り添ったアップデートも多くなり、ますますGKEの第一選択肢として Autopilot の選定が加速するような内容も多くなってきました
@@ -322,9 +282,7 @@ https://zenn.dev/yokoo_an209/scraps/1796702689a4d5
 https://zenn.dev/toversus/scraps/06c7c9181ff3c1
 
 
-# さいごに
-
-同じようにセッションレポートを上げてくださっている記事もあるのでそちらと合わせて、参照いただけるとより詳しい内容を追うことができるかともいます。
+また、同じようにセッションレポートを上げてくださっている記事もあるのでそちらと合わせて、参照いただけるとより詳しい内容を追うことができるかと思います。
 
 https://iret.media/112497
 
