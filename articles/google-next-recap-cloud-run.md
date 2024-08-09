@@ -13,6 +13,8 @@ published: true
 
 前回の GKE 編に引き続き、今回は Cloud Runについての最新アップデートのご紹介です！
 
+https://zenn.dev/yokoo_an209/articles/google-next-recap-gke
+
 
 # セッション
 
