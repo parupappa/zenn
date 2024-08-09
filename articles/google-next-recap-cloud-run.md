@@ -3,7 +3,7 @@ title: "Google Cloud Next Tokyo’24 勝手にRecap コンテナ最新アップ�
 emoji: "📑"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ['CloudRun', 'GoogleCloud', 'GKE' ]
-published: false
+published: true
 ---
 # これはなに？
 

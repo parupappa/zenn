@@ -3,7 +3,7 @@ title: "Google Cloud Next Tokyo’24 勝手にRecap コンテナ最新アップ�
 emoji: "📦"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ['GKE', 'GoogleCloud', 'CloudRun' ]
-published: false
+published: true
 ---
 
 # これはなに？
@@ -51,18 +51,17 @@ https://cloud.google.com/kubernetes-engine/docs/concepts/workload-identity?hl=ja
 
 ![alt text](/images/google-next-recap-gke/workload-identity-gke.jpg)
 
-これまで、GKE のWorkload Identity 連携は Google Cloud の Service Account（以降：SA）とKubernetesのSAをそれぞれ作成し、bindingする形式でしたが、Google Cloud のSAを作らずに Kubernetes のSAを直接メンバーとして権限を紐づけられるようになりました
+- これまで、GKE のWorkload Identity 連携は Google Cloud の Service Account（以降：SA）とKubernetesのSAをそれぞれ作成し、bindingする形式でしたが、Google Cloud のSAを作らずに Kubernetes のSAを直接メンバーとして権限を紐づけられるようになりました
 
-特にこれをterraform で記述する際はけっこうめんどくさかったので、個人的には結構嬉しいアップデートです！
+- 特にこれをterraform で記述する際はけっこうめんどくさかったので、個人的には結構嬉しいアップデートです！
 
-Cynthia Thomas-sanからの発表コメント
+- Cynthia Thomas-sanからの発表コメント
+  - [https://twitter.com/](https://twitter.com/)*techcet*/status/1773865010651173293
+  - [https://twitter.com/](https://twitter.com/)*techcet*/status/1773865012320440390
 
-- [https://twitter.com/](https://twitter.com/)*techcet*/status/1773865010651173293
-- [https://twitter.com/](https://twitter.com/)*techcet*/status/1773865012320440390
+- こちらで詳しく解説しているので、もしよければ🙋‍♂️
 
-試してみた記事を書いたので、もしよければ🙋‍♂️
-
-- https://zenn.dev/yokoo_an209/articles/new-workload-identity-federation-for-gke
+    https://zenn.dev/yokoo_an209/articles/new-workload-identity-federation-for-gke
 
 ## Pod Bursting
 
