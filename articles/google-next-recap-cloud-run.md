@@ -60,8 +60,8 @@ https://cloud.google.com/run/docs/configuring/vpc-direct-vpc?hl=ja
     | リリース ステージ | GA（Cloud Run ジョブは除く） | GA |
 
 
-- 参考: [ダイレクト VPC 下り（外向き）と VPC コネクタの比較  |  Cloud Run Documentation  |  Google Cloud](https://cloud.google.com/run/docs/configuring/connecting-vpc?hl=ja)
-- 参考: [VPC ネットワークによるダイレクト VPC 下り（外向き）  |  Cloud Run Documentation  |  Google Cloud](https://cloud.google.com/run/docs/configuring/vpc-direct-vpc?hl=ja)
+  - 参考: [ダイレクト VPC 下り（外向き）と VPC コネクタの比較  |  Cloud Run Documentation  |  Google Cloud](https://cloud.google.com/run/docs/configuring/connecting-vpc?hl=ja)
+  - 参考: [VPC ネットワークによるダイレクト VPC 下り（外向き）  |  Cloud Run Documentation  |  Google Cloud](https://cloud.google.com/run/docs/configuring/vpc-direct-vpc?hl=ja)
 
 
 さらに詳しくは[こちら💡](https://qiita.com/AoTo0330/items/3e47dfbbcfe8b38591e1#volume-mounts)
@@ -72,6 +72,8 @@ https://cloud.google.com/blog/ja/products/serverless/introducing-cloud-run-volum
 
 ![alt text](/images/google-next-recap-cloud-run/volume-mount.png)
 
+- Cloud Run では共有ボリュームを利用することができず、用途としてはステートレスなワークロードに限定されていました。
+- [サイドカーによるマルチコンテナ対応](https://cloud.google.com/run/docs/deploying?hl=ja#sidecars)と同時に、[インメモリボリューム](https://cloud.google.com/run/docs/configuring/services/in-memory-volume-mounts?hl=ja#command-line)の対応がされましたが、依然としてデータの永続化(大容量のデータを扱う場合やデータの信頼性が求められる場合)はファイル共有などを実装することが求められていました。
 
 詳しくは[こちら💡](https://qiita.com/AoTo0330/items/3e47dfbbcfe8b38591e1#volume-mounts)
 
@@ -82,7 +84,8 @@ https://firebase.google.com/docs/hosting/cloud-run?hl=ja
 
 ![alt text](/images/google-next-recap-cloud-run/app-hosting.png)
 
-
+- Firebase Hosting と Cloud Run を組み合わせることで、Web アプリケーションを簡単にデプロイできるようになりました
+  - SSRに必要なリソースを自動プロビジョニングすることができるので、開発者は SSR の設定に時間をかけることなく、Web アプリケーションをデプロイできるようになりました
 
 ## Automatic Security Update
 **🖊️公式doc**
@@ -95,15 +98,27 @@ https://cloud.google.com/container-optimized-os/docs/concepts/auto-update?hl=ja
 
 
 
-## Multi-Region Load Balancer
+## Multi-Region Load Balancing
 **🖊️公式doc**
 https://cloud.google.com/run/docs/multiple-regions?hl=ja
 
 ![alt text](/images/google-next-recap-cloud-run/multi-region-lb.png)
 
+- Cloud Run service をカスタムドメインを用いて公開する方法は、Global External Application Load Balancer の使用が一般的でしたが、Multi-Region Load Balancing を使用することで、複数のリージョンにまたがる Cloud Run service を公開することができるようになりました
+    ```bash
+    gcloud run deploy <SERVICE_NAME> \
+    --region=><REGION1>,<REGION2>,<REGION3> \
+    --domain=<CUSTOM_DOMAIN>
+    ```
 
 詳しくは[こちら💡](https://qiita.com/AoTo0330/items/3e47dfbbcfe8b38591e1#multi-region-services)
 
+### Disable the default URL
+**🖊️公式doc**
+https://cloud.google.com/run/docs/securing/ingress?hl=en#disable-url
+
+- 少し余談ですが、Cloud Run でデフォルト URL を無効化する機能が Preview 公開されました。
+- 無効化すると Cloud Run service の起動は Cloud Load Balancing 経由のみに限定され、セキュリティ強化につながりますが、Preview版ということもあり、本番環境での運用はまだ推奨されていません。パブリックエンドポイントでアクセスする Pub/Sub や BigQuery リモート関数からの呼び出しも不可になるので注意がそこは注意が必要です。
 
 
 ## Application Canvas
@@ -112,11 +127,16 @@ https://cloud.google.com/blog/ja/products/containers-kubernetes/google-clouds-co
 
 ![alt text](/images/google-next-recap-cloud-run/application-canvas.png)
 
+- Geminiを利用し、自然言語によってアプリケーションコンポーネントを構築することができるようになりました。
+- Cloud Run と統合されている、Firestore, Cloud SQL, Memorystore などのサービスを利用することができます。
+
 
 詳しくは[こちら💡](https://qiita.com/AoTo0330/items/3e47dfbbcfe8b38591e1#application-canvas)
 
 
-
 # Cloud Run まとめ
 ![alt text](/images/google-next-recap-cloud-run/cloud-run-matome.png)
+
+- Cloud Run の利用におけるかゆいところに手が届くようなアップデートが多く、開発者にとっては非常にありがたいアップデートが多かったです
+  - サーバーレスであるCloud Runがよりサーバーレスになっていくとともに、Geminiとの統合により、より開発者の認知負荷や開発負荷を軽減することができるようになった印象です
 
