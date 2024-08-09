@@ -1,6 +1,6 @@
 ---
 title: "Google Cloud Next Tokyo’24 勝手にRecap コンテナ最新アップデート紹介 ~ Cloud Run 編 ~"
-emoji: "📑"
+emoji: "🏃‍♀️"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ['CloudRun', 'GoogleCloud', 'GKE' ]
 published: true
