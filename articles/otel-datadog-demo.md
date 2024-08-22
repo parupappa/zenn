@@ -3,7 +3,7 @@ title: "OpenTelemetry - Community Demo を Datadog で試す"
 emoji: "👓"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ['Datadog', 'OpenTelemetry', 'observability', 'Kubernetes']
-published: false
+published: true
 ---
 
 # はじめに
