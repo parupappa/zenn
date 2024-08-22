@@ -80,7 +80,9 @@ NOTES:
 ```
 
 
-```yaml
+`my-values-file.yaml` に Datadog の設定を追加
+
+```yaml:my-values-file.yaml
 opentelemetry-collector:
   extraEnvsFrom:
     - secretRef:
