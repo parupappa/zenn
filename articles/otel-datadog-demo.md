@@ -24,12 +24,11 @@ observabilityバックエンドを Datadog にする方法をいろいろ調べ�
 
 https://docs.datadoghq.com/ja/opentelemetry/guide/otel_demo_to_datadog/?tab=kubernetes
 
-https://www.datadoghq.com/ja/blog/ingest-opentelemetry-traces-metrics-with-datadog-exporter/
-
 
 # お試し
 
-minikube を起動するのですが、デモの動作環境メモリが「6 GB of free RAM for the application」なので、minikube 起動時にメモリ容量を 6GB 以上に指定
+minikube を起動するのだが、デモの動作環境メモリが
+**「6 GB of free RAM for the application」** なので、minikube 起動時にメモリ容量を 6GB 以上に指定
 
 ```bash
 $ minikube start --cpus='4' --memory='8G'
@@ -51,10 +50,7 @@ demoの Helm Chart は[こちら](https://github.com/open-telemetry/opentelemetr
 
 ```bash
 $ helm install my-otel-demo open-telemetry/opentelemetry-demo --values my-values-file.yaml
-```
 
-:::details result
-```bash
 NAME: my-otel-demo
 LAST DEPLOYED: Wed Aug 21 15:22:19 2024
 NAMESPACE: otel-demo
@@ -82,10 +78,8 @@ NOTES:
   Load Generator UI    http://localhost:8080/loadgen/
   Jaeger UI            http://localhost:8080/jaeger/ui/
 ```
-:::
 
 
-:::details my-values-file.yaml
 ```yaml
 opentelemetry-collector:
   extraEnvsFrom:
@@ -127,11 +121,13 @@ opentelemetry-collector:
           processors: [resource, batch]
           exporters: [opensearch, debug, datadog]
 ```
-:::
 
 
 # Datadog Exporter
-DataDog には OpenTelemetry の Exporter が用意されている。Datadog Agent を使用したパターンもあるが、今回は、Exporter を使用する
+Datadog には OpenTelemetry の Exporter(Datadog Exporter) が用意されている。
+Datadog Agent を使用した収集のパターンもあるが、今回は、以下のように Datadog Exporter を使用する
+
+![alt text](/images/otel-datadog-demo/datadog-exporter.png)
 
 https://docs.datadoghq.com/ja/opentelemetry/
 
@@ -143,12 +139,10 @@ Datadog Exporter に関する詳しい説明は以下のあたりに載ってい
 
 https://www.datadoghq.com/ja/blog/ingest-opentelemetry-traces-metrics-with-datadog-exporter/
 
-サンプルはこちら
+EXporter に関する config のサンプルはこちら
 
 https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/exporter/datadogexporter/examples/collector.yaml
 
-
-![alt text](/images/otel-datadog-demo/datadog-exporter.png)
 
 # 確認
 
@@ -156,10 +150,12 @@ OpenTelemetry Host Metrics Dashboard を Datadog に追加することで確認�
 
 ![alt text](/images/otel-datadog-demo/datadog-image-0.png)
 
-また、Datadog 上で各 micro service に関するトレースが表示されていることも確認
+また、Datadog 上で各 micro service に関するトレースが表示されていることも確認できた
 
 ![alt text](/images/otel-datadog-demo/datadog-image-1.png)
 
+# おわりに
+Datadog には OpenTelemetry の Exporter が用意されているので、テレメトリーデータの送信を Datadog で実現するのはメッチャカンタン🚀
+
 # 参考
 - [OpenTelemetry の Community Demo のトレースとメトリクスを Datadog に送信してみた](https://qiita.com/stanabe/items/0940f0268b4a0afe4381)
-- 
