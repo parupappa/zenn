@@ -1,5 +1,5 @@
 ---
-title: "Github Actionsで Cross Project の Direct Workload Identity Federation を試す"
+title: "Github ActionsでCross ProjectのDirect Workload Identity Federationを試す"
 emoji: "🧬"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ['Google Cloud', 'Workload Identity', 'Github Actions', 'Terraform']
