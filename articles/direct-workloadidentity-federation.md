@@ -32,13 +32,12 @@ https://cloud.google.com/iam/docs/workload-identity-federation?hl=ja#pools
 では対応していない場合どうするかというと、従来の[**Workload Identity Federation through a Service Account**](https://cloud.google.com/iam/docs/workload-identity-federation?hl=ja#direct-resource-access) が推奨されます
 
 
-両者の違いについて、詳しい説明はこちらを見てもらえたらと思います
+両者の違いについて、詳しい説明は[こちら](https://paper2.hatenablog.com/entry/2024/06/29/143947#Direct-Workload-Identity-Federation%E3%81%A8%E3%81%AF)を見てもらえたらと思います
 
-https://paper2.hatenablog.com/entry/2024/06/29/143947#Direct-Workload-Identity-Federation%E3%81%A8%E3%81%AF
 
 
 ## Direct Workload Identity Federation をシングルプロジェクトで試す
-以下記事がとても参考になるので、基本的にこれを試してもらえれば良いです
+[@paper2parasol](https://x.com/paper2parasol)さんの書かれている、以下記事がとても参考になるので、基本的にこれを試してもらえれば良いです
 
 https://paper2.hatenablog.com/entry/2024/06/29/143947
 
@@ -46,7 +45,7 @@ https://paper2.hatenablog.com/entry/2024/06/29/143947
 ## Direct Workload Identity Federation を Cross Project（プロジェクト跨ぎ）で試す
 さて、今回の本題となる Cross Project での Direct Workload Identity Federation について説明します
 
-今回実現したいことの前提は以下です。
+今回実現したいこととなった前提は以下です。
 
 【前提】
 - tfstate 保管用のプロジェクトとして、`manegement` というプロジェクトを作成し、state分割をせず、一元管理とする
@@ -61,7 +60,8 @@ https://paper2.hatenablog.com/entry/2024/06/29/143947
 
 
 ### Terraform での設定
-`variable.tf` に resouece 作成に必要なvariableを用意します。`tfstate_project_id` を追加し、state参照先プロジェクトを指定します.
+**`variable.tf` に resouece 作成に必要なvariableを用意します。**
+`tfstate_project_id` を追加し、state参照先プロジェクトを指定します.
 
 リソースの参照・作成する先のプロジェクトは、provider と resource 側で設定することとします
 
@@ -87,7 +87,7 @@ variable "repo_name" {
 }
 ```
 
-Workload Identity Poolを作成します
+**Workload Identity Poolを作成します**
 ```hcl
 # Workload Identity
 resource "google_iam_workload_identity_pool" "github_actions_pool" {
@@ -99,7 +99,7 @@ resource "google_iam_workload_identity_pool" "github_actions_pool" {
 }
 ```
 
-Workload Identity Pool Provider を作成します
+**Workload Identity Pool Provider を作成します**
 
 github_org には、Github Organization を指定します
 `attribute-condition`オプションでは、Workload Identityの利用をgithub_orgで指定したOrganizationに制限しています
@@ -126,7 +126,7 @@ resource "google_iam_workload_identity_pool_provider" "provider" {
 }
 ```
 
-Workload Identity Poolに権限を付与します
+**Workload Identity Poolに権限を付与します**
 
 ポイントは以下で、プリンシパルセットに設定するアクセスをCross Projectの参照先（今回だと、tfstateの存在するプロジェクト：`management`）とすることです
 
