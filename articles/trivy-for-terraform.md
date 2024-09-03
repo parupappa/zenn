@@ -1,7 +1,7 @@
 ---
-title: "Github Actions で見る tfsec と Trivy の今 ~ terraform 静的解析"
+title: "Github Actions で見る tfsec と Trivy の今 ~ Terraform 静的解析"
 emoji: "💧"
-type: "tech" # tech: 技術記事 / idea: アイデア
+type: "tech " # tech: 技術記事 / idea: アイデア
 topics: ['Github Actions', 'tfsec', 'Trivy', 'terraform']
 published: true
 ---
@@ -43,10 +43,10 @@ https://github.com/aquasecurity/tfsec/discussions/1994
 
 https://knqyf263.hatenablog.com/entry/2021/07/13/063729
 
-tfsec 自体は最近もメンテはされている様子だが追従しているのかは正直わからない🧐
-（どなたか知ってる方いたら教えていただきたいです）
+tfsec 自体は最近もメンテはされている様子だがどこまでterraformのupdateに追従しているのかは正直わからない🧐
+（どなたか知ってる方いたら教えていただきたいです...🙇‍♂️）
 
-リポジトリ内のREADME.mdの冒頭に「tfsec to Trivy Migration」という移行を促すアナウンスが追加されています（2023年8月31日）
+リポジトリ内のREADME.mdの冒頭に「tfsec to Trivy Migration」という移行を促すアナウンスが追加されている模様（2023年8月31日）
 
 https://github.com/aquasecurity/tfsec
 
@@ -143,9 +143,15 @@ jobs:
 脆弱性が検知されない場合は、以下のようなコメントがPRに追加される
 ![alt text](/images/trivy-for-terraform/trivy-result.png)
 
-Misconfiguration Scanning を実現するには、以下を試してみると良さそう
+# Misconfiguration Scanning を実現するには、以下を試してみると良さそう
+Misconfiguration Scanning とは、設定ミス（セキュリティ課題やベストプラクティス乖離など）を検出できる。
 
-[https://aquasecurity.github.io/trivy/v0.29.2/docs/misconfiguration/scanning/](https://aquasecurity.github.io/trivy/v0.29.2/docs/misconfiguration/scanning/)
+Trivy の Misconfiguration Scanning は Terraform, AWS CloudFormation など複数のスキャンをサポートしている。
+
+https://kakakakakku.hatenablog.com/entry/2023/10/03/084323
+
+
+https://aquasecurity.github.io/trivy/v0.29.2/docs/misconfiguration/scanning/
 
 Google Cloud , AWS それぞれでの **Misconfiguration Scanning** に設定されているルールは以下から確認できる
 
