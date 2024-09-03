@@ -3,7 +3,7 @@ title: "Github ActionsでCross ProjectのDirect Workload Identity Federationを�
 emoji: "🧬"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ['Google Cloud', 'Workload Identity', 'Github Actions', 'Terraform']
-published: false
+published: true
 ---
 
 # はじめに
