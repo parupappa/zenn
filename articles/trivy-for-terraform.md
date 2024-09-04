@@ -35,7 +35,7 @@ jobs:
 
 https://github.com/aquasecurity/tfsec-pr-commenter-action
 
-# あれ、tfsec で Aqua に買収されてなかったけ？
+# あれ、tfsec って Aqua に統合されてなかったけ？
 
 そいういえば、tfsec ってAqua に買収されていなかったっけ？と思って調べてみると確かに買収されており、trivy ファミリーに加わっていた
 
