@@ -43,7 +43,7 @@ https://github.com/aquasecurity/tfsec/discussions/1994
 
 https://knqyf263.hatenablog.com/entry/2021/07/13/063729
 
-tfsec 自体は最近もメンテはされている様子だがどこまでterraformのupdateに追従しているのかは正直わからない🧐
+[release history 等](https://github.com/aquasecurity/tfsec/releases)をみるとtfsec 自体は最近もメンテはされている様子だがどこまでterraformのupdateに追従しているのかは正直わからない🧐
 （どなたか知ってる方いたら教えていただきたいです...🙇‍♂️）
 
 リポジトリ内のREADME.mdの冒頭に「tfsec to Trivy Migration」という移行を促すアナウンスが追加されている模様（2023年8月31日）
@@ -54,15 +54,14 @@ https://github.com/aquasecurity/tfsec
 
 https://zenn.dev/acntechjp/articles/9f0e3d4813e36d
 
-[Overview - Trivy](https://aquasecurity.github.io/trivy/v0.54/)
 
 migrate ガイドも出ている模様
 
-[https://github.com/aquasecurity/tfsec/blob/master/tfsec-to-trivy-migration-guide.md](https://github.com/aquasecurity/tfsec/blob/master/tfsec-to-trivy-migration-guide.md)
+https://github.com/aquasecurity/tfsec/blob/master/tfsec-to-trivy-migration-guide.md
 
 # Trivy for terraform
 
-もともとものモチベーションであったterraformの静的解析をtrivyで実施してみる
+もともとものモチベーションであったterraformの静的解析を[trivy](https://aquasecurity.github.io/trivy/v0.54/)で実施してみる
 
 今回は、[tfsec-pr-commenter-action](https://github.com/aquasecurity/tfsec-pr-commenter-action)を使っていたこともあり、Github Actionsで実行する前提とする
 
@@ -70,7 +69,7 @@ terraform でのtrivy 利用に関する内容で、宇宙から配信したよ�
 
 https://www.youtube.com/watch?v=yf8JC-aNIV8
 
-以下のような感じで、純粋な trivy でのコマンドをワークフローに組み込んでも良いが、公式が出しているActionsがあるのでそちらを使用する
+以下のような感じで、純粋な trivy でのコマンドをワークフローに組み込んでも良いが、公式が出しているActionsがあるのでそちらを推奨する
 
 ```yaml
 name: trivy-scan
@@ -88,11 +87,12 @@ jobs:
                 trivy config --exit-code 1 --severity HIGH,CRITICAL .
 ```
 
-ワークフローは公式が出しているこちらを実行
+ワークフローは公式が出しているこちらを使用する
 
 https://github.com/aquasecurity/trivy-action
 
 ということで実装
+trivy でのスキャン結果は、[sticky-pull-request-comment](https://github.com/marocchino/sticky-pull-request-comment)を使用して、PRにコメントを追加する
 
 ```yaml
 name: trivy-scan
