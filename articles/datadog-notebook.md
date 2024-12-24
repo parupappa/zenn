@@ -52,8 +52,8 @@ https://www.datadoghq.com/blog/incident-management-templates-notebooks-list/
 少し上でも触れましたが、 Datadog では、カスタマイズ可能なすぐに使える Notebook として [Template Gallary](https://docs.datadoghq.com/ja/notebooks/#%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%82%AE%E3%83%A3%E3%83%A9%E3%83%AA%E3%83%BC) を提供しています。
 
 個人的に特にオススメなのは、以下のテンプレートです
-- Incident Postmortem
-- Incident Report 
+- [Incident Postmortem](https://app.datadoghq.com/notebook/template/7/postmortem-ir-xxxx-outage-name)
+- [Incident Report](https://app.datadoghq.com/notebook/template/11/incident-report) 
 
 具体的な内容については後述します。
 
