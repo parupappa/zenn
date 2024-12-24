@@ -1,9 +1,9 @@
 ---
-title: "Datadog Notebook の便利な使い方を中の人と考えてみた"
-emoji: "🗂"
+title: "Datadog Notebook の使い方を中の人目線で考えてみた"
+emoji: "🗒️"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ['Datadog']
-published: false
+topics: ['Datadog', 'Notebook']
+published: true
 ---
 # はじめに
 Datadog で Sales Engineer をしている [parupappa](https://x.com/866mfs)です
@@ -37,9 +37,11 @@ Notebook ページの Template Gallery の中にも、How to use Daatadog Notebo
 ## Case1 - Document Library
 １つ目の使い方は、**ドキュメントライブラリー**として使用することです。
 
-Datadog Notebook は Dashboard, Monitor, Log など Detadog 内で定義されるリソースに対して、ネイティブで統合されるため、コンポーネントを自由に埋め込むことが可能です！<br>（スクリーンショットのような静的画像ではないので、時系列データを保持したまま見ることが可能）
+Datadog Notebook は Dashboard, Monitor, Log など Detadog 内で定義されるリソースに対して、ネイティブで統合されるため、コンポーネントを自由に埋め込むことが可能です<br>（スクリーンショットのような静的画像ではないので、時系列データとして保持したまま参照することが可能）
 
-https://www.datadoghq.com/blog/incident-management-templates-notebooks-list/?_gl=1*lha1q4*_gcl_aw*R0NMLjE3MzQ0MjAyNzguQ2owS0NRaUF2UC02QmhEeUFSSXNBSjN1djdhQUdzamlBV1dOV0pJSldVdEFMQUZleldqNUN2b044T0pabkNVYnRjM3ZLbHRmeFdrSTl5WWFBcXhURUFMd193Y0I.*_gcl_au*MTI4MjI5NDUxNC4xNzMzODA1MTI4*_ga*NTY3MzcxMjg4LjE3MzM3OTc3MjE.*_ga_KN80RDFSQK*MTczNDUzNDY5NC4yNS4xLjE3MzQ1MzgyOTAuMC4wLjQ1MDkyOTI2Ng..*_fplc*MGduTmk3VWF2bWJWUERvUTBHSm9kWFZ0d3lNaGZkZnVyUFJZZUlMenlvRDJwT050bkVNaWNERUhFaXRueCUyRk15YkFRT3doRjEyMUlxMEp5SXFkWURkSiUyRkZRSmRPdGFZNGxpRm9ZTzhLQ1ZiQ2xvcDRkNVBUWDJBS3YzM25BUSUzRCUzRA..
+また、Dashboard のグラフなどは Notebook に対しても Datadog 内での操作感と同様ように、ドラッグアンドドロップやコピペ（Cmd + C）で簡単に操作できるので、気持ちの良い UI/UX になっている点も推しポイントです☺️
+
+https://www.datadoghq.com/blog/incident-management-templates-notebooks-list/
 
 ### Template Gallery
 少し上でも触れましたが、 Datadog では、カスタマイズ可能なすぐに使える Notebook として[Template Gallary](https://docs.datadoghq.com/ja/notebooks/#%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%82%AE%E3%83%A3%E3%83%A9%E3%83%AA%E3%83%BC)を提供しています。
@@ -62,29 +64,46 @@ https://www.datadoghq.com/blog/incident-management-templates-notebooks-list/?_gl
 ![alt text](../images/datadog-notebook/notebook-team.png)
 
 ## Case2 - Insident Management
-https://www.datadoghq.com/blog/incident-management-templates-notebooks-list/?_gl=1*lha1q4*_gcl_aw*R0NMLjE3MzQ0MjAyNzguQ2owS0NRaUF2UC02QmhEeUFSSXNBSjN1djdhQUdzamlBV1dOV0pJSldVdEFMQUZleldqNUN2b044T0pabkNVYnRjM3ZLbHRmeFdrSTl5WWFBcXhURUFMd193Y0I.*_gcl_au*MTI4MjI5NDUxNC4xNzMzODA1MTI4*_ga*NTY3MzcxMjg4LjE3MzM3OTc3MjE.*_ga_KN80RDFSQK*MTczNDUzNDY5NC4yNS4xLjE3MzQ1MzgyOTAuMC4wLjQ1MDkyOTI2Ng..*_fplc*MGduTmk3VWF2bWJWUERvUTBHSm9kWFZ0d3lNaGZkZnVyUFJZZUlMenlvRDJwT050bkVNaWNERUhFaXRueCUyRk15YkFRT3doRjEyMUlxMEp5SXFkWURkSiUyRkZRSmRPdGFZNGxpRm9ZTzhLQ1ZiQ2xvcDRkNVBUWDJBS3YzM25BUSUzRCUzRA..
+2つ目の使い方として、広くインシデントマネジメントに使えるという要素があります。
 
-2017
-
-https://www.datadoghq.com/blog/data-driven-notebooks/
-
-2020
-
-https://www.datadoghq.com/blog/collaborative-notebooks-datadog/?_gl=1*iwpvom*_gcl_aw*R0NMLjE3MzQ0MjAyNzguQ2owS0NRaUF2UC02QmhEeUFSSXNBSjN1djdhQUdzamlBV1dOV0pJSldVdEFMQUZleldqNUN2b044T0pabkNVYnRjM3ZLbHRmeFdrSTl5WWFBcXhURUFMd193Y0I.*_gcl_au*MTI4MjI5NDUxNC4xNzMzODA1MTI4*_ga*NTY3MzcxMjg4LjE3MzM3OTc3MjE.*_ga_KN80RDFSQK*MTczNDUzNDY5NC4yNS4xLjE3MzQ1MzY5MTUuMC4wLjQ1MDkyOTI2Ng..*_fplc*TnJWRFhJUTFlcHUyR3E0cTFoSFpCZmxRWDJHaWcwNzMxM014YXFPc2NsVTZsJTJGZ3U1NHZmRXY4UEd2c1ZObGpZcXZOY0FBZmxoTUdGZ0pObWFrNEFJSmRUTU44UWhNT3o0TUZFdWFqTmdFY0NXZU9JZlZaMWVXSWcxJTJCalBBUSUzRCUzRA..
+少し古いので UI の違いやアップデートが入っている部分もありますが、以下のブログを見ていただくとイメージがつくと思います。
+- 2017年
+  - [Data-driven storytelling with Datadog Notebooks](https://www.datadoghq.com/blog/data-driven-notebooks/)
+- 2020年
+  - [Tell data-driven stories with Collaborative Notebooks](https://www.datadoghq.com/blog/collaborative-notebooks-datadog/)
 
 
-[Runbook](https://www.pagerduty.co.jp/blog/what-is-a-runbook/#%E3%83%A9%E3%83%B3%E3%83%96%E3%83%83%E3%82%AF%E3%82%92%E6%B4%BB%E7%94%A8%E3%81%99%E3%82%8B4%E3%81%A4%E3%81%AE%E3%83%A1%E3%83%AA%E3%83%83%E3%83%88)
+特に、Template Gallery の Incident Report は、あらかじめ Incidet Report として必要な要素が詰まっており、何を Incient と定義するかの Graph を設定するだけで、定期的に見ることができるダッシュボードのような使い方ができると思います。
 
-## Case3 - Postmortem
+![alt text](../images/datadog-notebook/incident-report.png)
 
-https://www.datadoghq.com/blog/incident-postmortem-process-best-practices/?_gl=1*1r6ox9f*_gcl_aw*R0NMLjE3MzQ0MjAyNzguQ2owS0NRaUF2UC02QmhEeUFSSXNBSjN1djdhQUdzamlBV1dOV0pJSldVdEFMQUZleldqNUN2b044T0pabkNVYnRjM3ZLbHRmeFdrSTl5WWFBcXhURUFMd193Y0I.*_gcl_au*MTI4MjI5NDUxNC4xNzMzODA1MTI4*_ga*NTY3MzcxMjg4LjE3MzM3OTc3MjE.*_ga_KN80RDFSQK*MTczNDUzNDY5NC4yNS4xLjE3MzQ1MzgzMDMuMC4wLjQ1MDkyOTI2Ng..*_fplc*RjVNM0J5dXdJYWpLJTJGOFN5anJzOUF4S1prUmxmbThzYSUyRlRWOENoa0F2ViUyQlRTZk1JWllyTFh3Z3QyJTJCbWpLUzVLSGx5VXlTcmhqUng0M1FoMTlhRWtLN0k4dmdnWFdZZ0JJV1hZRVpUUFNMQ3hXVXQyYU00YW9sNVluM0t4QUElM0QlM0Q.
+また、左上の `Add Template Variables` を押すと、Notebook に対する変数を設定できるので、環境名や、cluster 名などお好きなタグを使用して、変数化したい部分を設定できるので、複数個同じようなテンプレートを用意する必要もないです。
 
-今年のDashでBits AIを活用したIncidentについて説明がされてますが、その中でNotebookにこれまでの経緯をまとめてくれるとか、Postmortem自動で書いてくれるとかが説明されてます
+![alt text](../images/datadog-notebook/template-value.png)
 
+
+また Notebook は Bits AI とも統合されているので、Bits AI が Incident の経緯をまとめてくれる機能も今年の DASH で発表されています。
 具体的な使い方イメージは動画を見ていただけるとイメージがつくかと思います！
+
 https://www.youtube.com/watch?v=ZMNXNH-kJAM&t=5100s
 
+ブログも併せてご覧ください
+
 https://www.datadoghq.com/blog/bits-ai-autonomous-investigations/
+
+Bits AI Autonomous Investigations　は現在、Preview での利用となっているため、気になる方は[こちら](https://www.datadoghq.com/product-preview/)から Request をしてみてください！
+
+## Case3 - Postmortem
+すでに触れられている、Template Gallery の Incident Postmortem もオススメしたい内容です。
+
+上で説明したような、Bits AI との統合により、Postmortem の自動生成の機能も備わってきているので、今後の機能拡充があるかもしれません。
+
+
+こちらのブログで Incident Management から Postmortem なでの使い方イメージが解説されています。
+
+https://www.datadoghq.com/blog/incident-postmortem-process-best-practices/
+
+
 
 
 # Others
@@ -93,9 +112,8 @@ Datadog の terraform provier に2019年から [Support for Notebook resources #
 
 https://github.com/DataDog/terraform-provider-datadog/issues/261
 
-issue の中で、機能実装を望む声は多く上がっていそうですが、使い方として難しいが理由ではないかと推察しています。
-[datadog_dashboard](https://registry.terraform.io/providers/DataDog/datadog/latest/docs/resources/dashboard) と同じく、インタラクティブに操作することがメインとなる使い方なので、resource の管理面や運用の仕方が難しくなりそうですね
-
+issue の中で、機能実装を望む声は多く上がっていそうですが、使い方として難しいことが理由ではないかと推察しています。
+[datadog_dashboard](https://registry.terraform.io/providers/DataDog/datadog/latest/docs/resources/dashboard) と同じく、インタラクティブに操作することがメインとなる使い方なので、仮に実装されたとしても、resource の管理面や運用の仕方に工夫が必要そうですね
 
 
 # さいごに
