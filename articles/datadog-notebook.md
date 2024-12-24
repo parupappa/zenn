@@ -3,12 +3,14 @@ title: "Datadog Notebook の使い方を中の人目線で考えてみた"
 emoji: "🗒️"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ['Datadog', 'Notebook']
-published: false
+published: true
 ---
 # はじめに
 Datadog で Sales Engineer をしている [parupappa](https://x.com/866mfs) です
 
 この記事は、[Datadog Advent Calendar 2024](https://qiita.com/advent-calendar/2024/datadog)の14日目の記事です。
+
+---
 
 突然ですが、みなさん、**Datadog Notebook** 使っていますか？
 
@@ -19,7 +21,7 @@ Datadog で Sales Engineer をしている [parupappa](https://x.com/866mfs) で
 # Datadog Notebook
 Datadog Notebook について知らない方はまずはこちらをご覧いただければなんとなく掴めると思います。
 
-https://docs.datadoghq.com/ja/notebooks/#types-of-content
+https://docs.datadoghq.com/notebooks
 
 一言で言うと、**Notion や Google Docs, Confluence などのドキュメントツールに、Datadog 独自のコンポーネントを組み込めるように拡張したもの**です。
 
@@ -46,7 +48,7 @@ Datadog Notebook は Dashboard, Monitor, Log など Detadog 内で定義され�
 https://www.datadoghq.com/blog/incident-management-templates-notebooks-list/
 
 ### Template Gallery
-少し上でも触れましたが、 Datadog では、カスタマイズ可能なすぐに使える Notebook として[Template Gallary](https://docs.datadoghq.com/ja/notebooks/#%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%82%AE%E3%83%A3%E3%83%A9%E3%83%AA%E3%83%BC) を提供しています。
+少し上でも触れましたが、 Datadog では、カスタマイズ可能なすぐに使える Notebook として [Template Gallary](https://docs.datadoghq.com/ja/notebooks/#%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%82%AE%E3%83%A3%E3%83%A9%E3%83%AA%E3%83%BC) を提供しています。
 
 個人的に特にオススメなのは、以下のテンプレートです
 - Incident Postmortem
@@ -63,7 +65,7 @@ https://www.datadoghq.com/blog/incident-management-templates-notebooks-list/
 
 などなど、特に Notebook では team でのタグやフィルタリングを設定できるので、team ごとでのテンプレートを Custom Templates として用意してもらうと機能とマッチするのではないかと感じています。
 
-![alt text](/images/datadog-notebook/notebook-team.png)
+![alt text](/images/datadog-notebook/notebook-team1.png)
 
 ## Case2 - Insident Management
 2つ目の使い方として、広くインシデントマネジメントに使えるという要素があります。
@@ -75,7 +77,7 @@ https://www.datadoghq.com/blog/incident-management-templates-notebooks-list/
   - [Tell data-driven stories with Collaborative Notebooks](https://www.datadoghq.com/blog/collaborative-notebooks-datadog/)
 
 
-特に、Template Gallery の Incident Report は、あらかじめ Incidet Report として必要な要素が詰まっており、何を Incient と定義するかの Graph を設定するだけで、定期的に見ることができるダッシュボードのような使い方ができると思います。
+特に、Template Gallery の Incident Report は、あらかじめ Incidet Report として必要な要素が詰まっており、何がどのくらい起きたら Incident と定義するかの Graph を設定するだけで、定期的に見ることができるダッシュボードのような使い方ができると思います。
 
 ![alt text](/images/datadog-notebook/incident-report.png)
 
@@ -84,31 +86,41 @@ https://www.datadoghq.com/blog/incident-management-templates-notebooks-list/
 ![alt text](/images/datadog-notebook/template-value.png)
 
 
-また Notebook は Bits AI とも統合されているので、Bits AI が Incident の経緯をまとめてくれる機能も今年の DASH で発表されています。
+また Notebook は Bits AI とも統合されているので、Bits AI が Incident の経緯をまとめてくれる機能(Bits AI Autonomous Investigations)も今年の DASH で発表されています。
 具体的な使い方イメージは動画を見ていただけるとイメージがつくかと思います！
 
 https://www.youtube.com/watch?v=ZMNXNH-kJAM&t=5100s
 
-ブログも併せてご覧ください
+こちらのブログも併せてご覧ください
 
 https://www.datadoghq.com/blog/bits-ai-autonomous-investigations/
 
-Bits AI Autonomous Investigations　は現在、Preview での利用となっているため、気になる方は[こちら](https://www.datadoghq.com/product-preview/)から Request をしてみてください！
+※ Bits AI Autonomous Investigations　は現在、Preview での利用となっているため、気になる方は[こちら](https://www.datadoghq.com/product-preview/)から Request をしてみてください！
 
 ## Case3 - Postmortem
 すでに触れられている、Template Gallery の Incident Postmortem もオススメしたい内容です。
 
-上で説明したような、Bits AI との統合により、Postmortem の自動生成の機能も備わってきているので、今後の機能拡充があるかもしれません。
+![alt text](/images/datadog-notebook/postmortem.png)
 
+上で説明したような、Bits AI との統合により、Incident Postmortem のテンプレートをベースとして、各インシデントに合わせたユニークなケースを自動生成してくれるので、今後の機能拡充にさらにご期待ください！
 
-こちらのブログで Incident Management から Postmortem なでの使い方イメージが解説されています。
+こちらのブログで Incident Management から Postmortem までの使い方イメージが解説されています。
 
 https://www.datadoghq.com/blog/incident-postmortem-process-best-practices/
 
 
-
-
 # Others
+## Copy formatted Contents
+Notebook の共有の方法として、Dashboard と同じような JSON での出力はもちろんのこと `Copy formatted Contents` という出力形式もあります。
+
+これは、Notebook の内容を HTML としてコピーした状態になるので、HTML　フォーマットに対応しているエディタ(Google Docs, MS Word)とかに貼り付けるとそのまま、
+
+同じ見た目で PDF も Markdown も出力できるようになっています（ちなみに、Markdown はテキストだけではなく、base64エンコードされたグラフの画像もついてきます. Notion だとエクスポートすると、テキストと画像ファイルが別々にでてくるので煩わしさがあった😢）
+
+なので、特に Datadog 上のデータを出力して自社のドキュメントライブラリーに統合させたいような場合には、このように様々な形式にエクスポートもできるので、 Tempolary 的な使い方として一次情報を残しておくという使い方も出来ると思います。
+
+![alt text](/images/datadog-notebook/copy-formatted-contents.png)
+
 ## Terraform 対応
 Datadog の terraform provier に2019年から [Support for Notebook resources #261](https://github.com/DataDog/terraform-provider-datadog/issues/261)として issue が上がっていますが、今だ採用にはいたっていません...
 
@@ -116,7 +128,6 @@ https://github.com/DataDog/terraform-provider-datadog/issues/261
 
 issue の中で、機能実装を望む声は多く上がっていそうですが、使い方として難しいことが理由ではないかと推察しています。
 [datadog_dashboard](https://registry.terraform.io/providers/DataDog/datadog/latest/docs/resources/dashboard) と同じく、インタラクティブに操作することがメインとなる使い方なので、仮に実装されたとしても、resource の管理面や運用の仕方に工夫が必要そうですね
-
 
 # さいごに
 Datadog Notebook のユースケースについて紹介する Advent Calendar をお送りしました。
