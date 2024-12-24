@@ -3,10 +3,12 @@ title: "Datadog Notebook の使い方を中の人目線で考えてみた"
 emoji: "🗒️"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ['Datadog', 'Notebook']
-published: true
+published: false
 ---
 # はじめに
-Datadog で Sales Engineer をしている [parupappa](https://x.com/866mfs)です
+Datadog で Sales Engineer をしている [parupappa](https://x.com/866mfs) です
+
+この記事は、[Datadog Advent Calendar 2024](https://qiita.com/advent-calendar/2024/datadog)の14日目の記事です。
 
 突然ですが、みなさん、**Datadog Notebook** 使っていますか？
 
@@ -19,7 +21,7 @@ Datadog Notebook について知らない方はまずはこちらをご覧いた
 
 https://docs.datadoghq.com/ja/notebooks/#types-of-content
 
-一言で言うと、Notion や Google Docs, Confluence などのドキュメントツールに、Datadog 独自のコンポーネントを組み込めるように拡張したものです。
+一言で言うと、**Notion や Google Docs, Confluence などのドキュメントツールに、Datadog 独自のコンポーネントを組み込めるように拡張したもの**です。
 
 Notebook ページの Template Gallery の中にも、How to use Daatadog Notebooks というテンプレートがあるのでそちらも合わせてご覧ください
 
@@ -39,12 +41,12 @@ Notebook ページの Template Gallery の中にも、How to use Daatadog Notebo
 
 Datadog Notebook は Dashboard, Monitor, Log など Detadog 内で定義されるリソースに対して、ネイティブで統合されるため、コンポーネントを自由に埋め込むことが可能です<br>（スクリーンショットのような静的画像ではないので、時系列データとして保持したまま参照することが可能）
 
-また、Dashboard のグラフなどは Notebook に対しても Datadog 内での操作感と同様ように、ドラッグアンドドロップやコピペ（Cmd + C）で簡単に操作できるので、気持ちの良い UI/UX になっている点も推しポイントです☺️
+また、Dashboard のグラフなどは Notebook に対しても Datadog 内での操作感と同様に、ドラッグアンドドロップやコピペ（Cmd + C）で簡単に操作できるので、気持ちの良い UI/UX になっている点も推しポイントです☺️
 
 https://www.datadoghq.com/blog/incident-management-templates-notebooks-list/
 
 ### Template Gallery
-少し上でも触れましたが、 Datadog では、カスタマイズ可能なすぐに使える Notebook として[Template Gallary](https://docs.datadoghq.com/ja/notebooks/#%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%82%AE%E3%83%A3%E3%83%A9%E3%83%AA%E3%83%BC)を提供しています。
+少し上でも触れましたが、 Datadog では、カスタマイズ可能なすぐに使える Notebook として[Template Gallary](https://docs.datadoghq.com/ja/notebooks/#%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%82%AE%E3%83%A3%E3%83%A9%E3%83%AA%E3%83%BC) を提供しています。
 
 個人的に特にオススメなのは、以下のテンプレートです
 - Incident Postmortem
@@ -56,8 +58,8 @@ https://www.datadoghq.com/blog/incident-management-templates-notebooks-list/
 またそれだけでなく、Custom Templates として、自分たちオリジナルのテンプレートを作成することができます。
 
 なので例えば・・・
-- team ごと（SRE, Platform, Application）での Datadog に関するオンボーディング Notebook 
-- team ごとのコストレポートの雛形
+- **team ごと（SRE, Platform, Application）での Datadog に関するオンボーディング Notebook**
+- **team ごとのコストレポートの雛形**
 
 などなど、特に Notebook では team でのタグやフィルタリングを設定できるので、team ごとでのテンプレートを Custom Templates として用意してもらうと機能とマッチするのではないかと感じています。
 
