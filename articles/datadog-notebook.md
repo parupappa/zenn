@@ -4,6 +4,7 @@ emoji: "🗒️"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ['Datadog', 'Notebook']
 published: true
+publication_name: datadog
 ---
 # はじめに
 Datadog で Sales Engineer をしている [parupappa](https://x.com/866mfs) です
