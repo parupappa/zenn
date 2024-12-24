@@ -23,7 +23,7 @@ https://docs.datadoghq.com/ja/notebooks/#types-of-content
 
 Notebook ページの Template Gallery の中にも、How to use Daatadog Notebooks というテンプレートがあるのでそちらも合わせてご覧ください
 
-![alt text](../images/datadog-notebook/notebook-howtouse.png)
+![alt text](images/datadog-notebook/notebook-howtouse.png)
 
 
 主な使い方や Tips については 過去の Datadog Advent Calendar や Meetup で書かれた以下のブログがとても貴重なのでぜひご覧ください！
@@ -61,7 +61,7 @@ https://www.datadoghq.com/blog/incident-management-templates-notebooks-list/
 
 などなど、特に Notebook では team でのタグやフィルタリングを設定できるので、team ごとでのテンプレートを Custom Templates として用意してもらうと機能とマッチするのではないかと感じています。
 
-![alt text](../images/datadog-notebook/notebook-team.png)
+![alt text](images/datadog-notebook/notebook-team.png)
 
 ## Case2 - Insident Management
 2つ目の使い方として、広くインシデントマネジメントに使えるという要素があります。
@@ -75,11 +75,11 @@ https://www.datadoghq.com/blog/incident-management-templates-notebooks-list/
 
 特に、Template Gallery の Incident Report は、あらかじめ Incidet Report として必要な要素が詰まっており、何を Incient と定義するかの Graph を設定するだけで、定期的に見ることができるダッシュボードのような使い方ができると思います。
 
-![alt text](../images/datadog-notebook/incident-report.png)
+![alt text](images/datadog-notebook/incident-report.png)
 
 また、左上の `Add Template Variables` を押すと、Notebook に対する変数を設定できるので、環境名や、cluster 名などお好きなタグを使用して、変数化したい部分を設定できるので、複数個同じようなテンプレートを用意する必要もないです。
 
-![alt text](../images/datadog-notebook/template-value.png)
+![alt text](images/datadog-notebook/template-value.png)
 
 
 また Notebook は Bits AI とも統合されているので、Bits AI が Incident の経緯をまとめてくれる機能も今年の DASH で発表されています。
