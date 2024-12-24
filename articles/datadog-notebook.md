@@ -68,7 +68,7 @@ https://www.datadoghq.com/blog/incident-management-templates-notebooks-list/
 
 ![alt text](/images/datadog-notebook/notebook-team1.png)
 
-## Case2 - Insident Management
+## Case2 - Incident Management
 2つ目の使い方として、広くインシデントマネジメントに使えるという要素があります。
 
 少し古いので UI の違いやアップデートが入っている部分もありますが、以下のブログを見ていただくとイメージがつくと思います。
