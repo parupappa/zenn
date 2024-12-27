@@ -1,5 +1,5 @@
 ---
-title: "Datadog Notebook の使い方を中の人目線で考えてみた"
+title: "Datadog Notebook 使いこなせていますか？"
 emoji: "🗒️"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ['Datadog', 'Notebook']
